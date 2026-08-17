@@ -22,6 +22,7 @@ pub mod sanct_unwrap;
 pub mod shift_overflow;
 pub mod state_write_in_view;
 pub mod tier_boundary_off_by_one;
+pub mod unbounded_event_emission;
 pub mod unbounded_return;
 pub mod unbounded_storage;
 pub mod unhandled_result;
@@ -190,6 +191,7 @@ impl RuleRegistry {
         registry.register(reserve_withdrawal::ReserveWithdrawalRule::new());
         registry.register(contracterror_enum::ContracterrorEnumRule::new());
         registry.register(cross_contract_call_in_loop::CrossContractCallInLoopRule::new());
+        registry.register(unbounded_event_emission::UnboundedEventEmissionRule::new());
         registry
     }
 }
