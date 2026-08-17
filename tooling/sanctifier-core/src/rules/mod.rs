@@ -4,6 +4,7 @@ pub mod arithmetic_overflow;
 pub mod auth_gap;
 pub mod balance_equality;
 pub mod contracterror_enum;
+pub mod cross_contract_call_in_loop;
 pub mod division_by_zero;
 pub mod eager_unwrap_or;
 pub mod edge_amount;
@@ -188,6 +189,7 @@ impl RuleRegistry {
         registry.register(unbounded_return::UnboundedReturnRule::new());
         registry.register(reserve_withdrawal::ReserveWithdrawalRule::new());
         registry.register(contracterror_enum::ContracterrorEnumRule::new());
+        registry.register(cross_contract_call_in_loop::CrossContractCallInLoopRule::new());
         registry
     }
 }
